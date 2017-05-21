@@ -22,13 +22,26 @@ Calculator.prototype.pingPong = function(goal) {
 };
 
 Calculator.prototype.addition = function(number2) {
-  output = this.number1 + number2;
+  output = parseInt(this.number1) + parseInt(number2);
   return output;
 };
 
 exports.calculatorModule = Calculator;
 
 },{}],2:[function(require,module,exports){
+var Calculator = require('./../js/pingpong.js').calculatorModule;
+
+$(document).ready(function() {
+  $('#addition').submit(function(event) {
+    event.preventDefault();
+    var num1 = $('#number1').val();
+    var num2 = $('#number2').val();
+    var simpleCalculator = new Calculator("green", num1);
+    var output = simpleCalculator.addition(num2);
+    $('#solution').append("These numbers add up to: " + output);
+  });
+});
+
 var Calculator = require('./../js/pingpong.js').calculatorModule;
 
 $(document).ready(function() {

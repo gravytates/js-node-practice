@@ -10,7 +10,7 @@ var jshint = require('gulp-jshint');
 var buildProduction = utilities.env.production;
 
 gulp.task('concatInterface', function() {
-  return gulp.src(['./js/pingpong-interface.js', './js/signup-interface.js'])
+  return gulp.src(['./js/*-interface.js'])
     .pipe(concat('allConcat.js'))
     .pipe(gulp.dest('./tmp'));
 });

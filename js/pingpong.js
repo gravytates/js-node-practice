@@ -21,7 +21,7 @@ Calculator.prototype.pingPong = function(goal) {
 };
 
 Calculator.prototype.addition = function(number2) {
-  output = this.number1 + number2;
+  output = parseInt(this.number1) + parseInt(number2);
   return output;
 };
 
