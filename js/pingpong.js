@@ -1,6 +1,7 @@
 
-function Calculator(skinName) {
+function Calculator(skinName, number1) {
   this.skin = skinName;
+  this.number1 = number1;
 }
 
 Calculator.prototype.pingPong = function(goal) {
@@ -17,6 +18,11 @@ Calculator.prototype.pingPong = function(goal) {
     }
   }
   return output;
-}
+};
+
+Calculator.prototype.addition = function(number2) {
+  output = this.number1 + number2;
+  return output;
+};
 
 exports.calculatorModule = Calculator;
